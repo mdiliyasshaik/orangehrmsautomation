@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.12.5 on win32)" generated="2024-10-23T16:07:51.861786" rpa="false" schemaversion="5">
+<suite id="s1" name="Loginfail" source="C:\Users\taran\PycharmProjects\pythonwithrobot\loginfail.robot">
+<test id="s1-t1" name="Validate unsuccessful login" line="10">
+<kw name="Open the browser and navigate to login page url" owner="resource" type="SETUP">
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2024-10-23T16:07:52.114723" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2024-10-23T16:07:52.114723" elapsed="2.229787"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-10-23T16:07:54.345520" elapsed="0.064906"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-10-23T16:07:54.411712" level="INFO">Opening url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-10-23T16:07:54.411712" elapsed="0.704795"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${LOGIN_BTN}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-10-23T16:07:55.116507" elapsed="1.504839"/>
+</kw>
+<status status="PASS" start="2024-10-23T16:07:52.114723" elapsed="4.506623"/>
+</kw>
+<kw name="Enter the user id and password and click signin">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T16:07:56.621346" level="INFO">Typing text 'Admin' into text field '//input[@name='username']'.</msg>
+<arg>${var_username}</arg>
+<arg>${user_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T16:07:56.621346" elapsed="0.139313"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-10-23T16:07:56.760659" level="INFO">Typing password into text field '//input[@name='password']'.</msg>
+<msg time="2024-10-23T16:07:56.804214" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${var_password}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T16:07:56.760659" elapsed="0.137949"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-10-23T16:07:56.898608" level="INFO">Clicking button '//button[@type='submit']'.</msg>
+<arg>${LOGIN_BTN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T16:07:56.898608" elapsed="0.300368"/>
+</kw>
+<arg>${username}</arg>
+<arg>${invalid_password}</arg>
+<status status="PASS" start="2024-10-23T16:07:56.621346" elapsed="0.577630"/>
+</kw>
+<kw name="wait until element is located">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-10-23T16:07:59.199442" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-10-23T16:07:57.198976" elapsed="2.000466"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-23T16:07:59.199442" elapsed="0.010603"/>
+</kw>
+<arg>${error_msg}</arg>
+<status status="PASS" start="2024-10-23T16:07:57.198976" elapsed="2.011069"/>
+</kw>
+<kw name="validate the error message">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-10-23T16:08:01.218592" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-10-23T16:07:59.218050" elapsed="2.000542"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2024-10-23T16:08:01.218592" level="INFO">Verifying element 'css=.oxd-alert.oxd-alert--error' contains exact text 'Invalid credentials'.</msg>
+<arg>${Error_MSG}</arg>
+<arg>${expected_msg}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2024-10-23T16:08:01.218592" elapsed="0.087647"/>
+</kw>
+<status status="PASS" start="2024-10-23T16:07:59.218050" elapsed="2.088189"/>
+</kw>
+<kw name="Close Browser Session" owner="resource" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-10-23T16:08:01.306239" elapsed="3.920008"/>
+</kw>
+<status status="PASS" start="2024-10-23T16:08:01.306239" elapsed="3.920008"/>
+</kw>
+<status status="PASS" start="2024-10-23T16:07:52.114723" elapsed="13.111524"/>
+</test>
+<test id="s1-t2" name="Validate Menu display after successful login" line="16">
+<kw name="Open the browser and navigate to login page url" owner="resource" type="SETUP">
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2024-10-23T16:08:05.226247" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2024-10-23T16:08:05.226247" elapsed="1.611073"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-10-23T16:08:06.838334" elapsed="0.067819"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-10-23T16:08:06.907165" level="INFO">Opening url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-10-23T16:08:06.907165" elapsed="1.521695"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${LOGIN_BTN}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-10-23T16:08:08.429857" elapsed="0.326422"/>
+</kw>
+<status status="PASS" start="2024-10-23T16:08:05.226247" elapsed="3.530032"/>
+</kw>
+<kw name="Enter the user id and password and click signin">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T16:08:08.757301" level="INFO">Typing text 'Admin' into text field '//input[@name='username']'.</msg>
+<arg>${var_username}</arg>
+<arg>${user_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T16:08:08.757301" elapsed="0.106361"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-10-23T16:08:08.863662" level="INFO">Typing password into text field '//input[@name='password']'.</msg>
+<msg time="2024-10-23T16:08:08.907393" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${var_password}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T16:08:08.863662" elapsed="0.161010"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-10-23T16:08:09.026081" level="INFO">Clicking button '//button[@type='submit']'.</msg>
+<arg>${LOGIN_BTN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T16:08:09.025680" elapsed="1.070487"/>
+</kw>
+<arg>${user_name}</arg>
+<arg>${valid_password}</arg>
+<status status="PASS" start="2024-10-23T16:08:08.756279" elapsed="1.339888"/>
+</kw>
+<kw name="wait until element is located">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-10-23T16:08:12.097817" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-10-23T16:08:10.097168" elapsed="2.000649"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-23T16:08:12.097817" elapsed="0.025919"/>
+</kw>
+<arg>${menu_item}</arg>
+<status status="PASS" start="2024-10-23T16:08:10.096167" elapsed="2.027569"/>
+</kw>
+<kw name="Close Browser Session" owner="resource" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-10-23T16:08:12.123736" elapsed="2.224470"/>
+</kw>
+<status status="PASS" start="2024-10-23T16:08:12.123736" elapsed="2.224470"/>
+</kw>
+<status status="PASS" start="2024-10-23T16:08:05.226247" elapsed="9.121959"/>
+</test>
+<doc>To Validate the login Page</doc>
+<status status="PASS" start="2024-10-23T16:07:51.861786" elapsed="22.486420"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="Loginfail">Loginfail</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
