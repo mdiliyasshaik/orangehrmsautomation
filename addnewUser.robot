@@ -27,21 +27,6 @@ Add New User
 
 Modify New user
     
-    Login To Application    ${user_name}     ${valid_password}
-    wait until element is located    ${pim_menu}
-    Click Element    ${pim_menu}
-    wait until element is located    ${var_ee_id}
-    Search Employee By ID    0372
-    wait until element is located    ${edit_pencil}
-    Click Element    ${edit_pencil}
-    wait until element is located    ${employee_details}
-    Clear Element Text    ${var_ee_middlename}
-    Update Middle Name   ${update_middle_name}
-    Click Save
-    wait until element is located    ${employee_details}
-    #Sleep    10
-    Logout the application
-    
     
     
 
