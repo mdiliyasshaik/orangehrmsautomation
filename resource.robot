@@ -5,6 +5,8 @@ Documentation    A resource file with reusable keywords and variables
 ...              by the imported selenium library
 Library          SeleniumLibrary
 Library          OperatingSystem
+Library           ValidateLeaveDate.py
+
 
 *** Variables ***
 ${var_username}        //input[@name='username']
@@ -26,6 +28,7 @@ ${logout_dropdown}      //span[@class='oxd-userdropdown-tab']
 ${logout}              //a[contains(text(),'Logout')]
 ${admin_menu}          //span[text()='Admin']
 ${pim_menu}              //span[text()='PIM']
+${leave_menu}              //span[text()='Leave']
 ${add_btn}                //button[normalize-space()='Add']
 ${var_newee_name}        //input[@placeholder='Type for hints...']
 ${var_newuser_name}       (//input[@class='oxd-input oxd-input--active'])[2]
@@ -44,7 +47,15 @@ ${employee_details_expected}     Personal Details
 ${search_btn}           //button[@type='submit']
 ${edit_pencil}          css=i.oxd-icon.bi-pencil-fill
 ${update_middle_name}    No
-
+${search_eeid}           0372
+${leave_from}         2024-28-10
+${leave_to}           2024-29-10
+${apply_leave}       //header/div[2]/nav[1]/ul[1]/li[1]
+${leave_list}        //li[@class='oxd-topbar-body-nav-tab --visited']
+${leave_apply_btn}    //button[@type='submit']
+${leave_type}        //div[@class='oxd-select-text oxd-select-text--active']
+${date_dropdown}    //div[@class='oxd-select-wrapper']
+${leave_option}     xpath=(//div[@class='oxd-select-option'])[2]
 *** Keywords ***
 Open the browser and navigate to login page url
     Create Webdriver    Chrome
@@ -130,5 +141,30 @@ Update Middle Name
     [Arguments]    ${updatemiddlename}
     Input text  ${var_ee_middlename}      ${update_middle_name}
 
+Navigate To Leave Menu
+    wait until element is located    ${leave_menu}
+    Click Element    ${leave_menu}
+
+Apply Leave
+    wait until element is located      ${apply_leave}
+    Click Element    ${apply_leave}
+    #wait until element is located      ${leave_apply_btn}
+    Wait Until Element Is Visible    ${date_dropdown}    timeout=5s
+    Click Element    ${date_dropdown}
+    Sleep    2
+    Wait Until Element Is Visible    ${leave_option}    timeout=5s
+    Click Element    ${leave_option}
+    Input Text    (//input[@placeholder='yyyy-dd-mm'])[1]    ${leave_from}
+    #Input Text    (//input[@placeholder='yyyy-dd-mm'])[2]    ${leave_to}
+    Input Text    css=.oxd-textarea.oxd-textarea--active.oxd-textarea--resize-vertical    Personal Leave
+    Click Element    ${leave_apply_btn}
+    Sleep    10
+
+Validate Leave request
+    wait until element is located      ${leave_list}
+    Click Element    ${leave_list}
+    sleep     10
+    ${is_leave_found}=    Validate Leave Date Exists    ${leave_from}
+    Should Be True    ${is_leave_found}    Leave applied on     ${leave_from}     should be present in the list
 
 
