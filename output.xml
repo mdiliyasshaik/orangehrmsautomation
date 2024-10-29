@@ -1,183 +1,505 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0.1 (Python 3.12.5 on win32)" generated="2024-10-23T16:07:51.861786" rpa="false" schemaversion="5">
-<suite id="s1" name="Loginfail" source="C:\Users\taran\PycharmProjects\pythonwithrobot\loginfail.robot">
-<test id="s1-t1" name="Validate unsuccessful login" line="10">
+<robot generator="Robot 7.0.1 (Python 3.12.5 on win32)" generated="2024-10-29T17:01:26.658190" rpa="false" schemaversion="5">
+<suite id="s1" name="createTimeSheet" source="C:\Users\taran\PycharmProjects\PythonwithRobot\createTimeSheet.robot">
+<test id="s1-t1" name="Create Time sheet for current week" line="10">
 <kw name="Open the browser and navigate to login page url" owner="resource" type="SETUP">
 <kw name="Create Webdriver" owner="SeleniumLibrary">
-<msg time="2024-10-23T16:07:52.114723" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<msg time="2024-10-29T17:01:27.228852" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
 <arg>Chrome</arg>
 <doc>Creates an instance of Selenium WebDriver.</doc>
-<status status="PASS" start="2024-10-23T16:07:52.114723" elapsed="2.229787"/>
+<status status="PASS" start="2024-10-29T17:01:27.228852" elapsed="2.069790"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-10-23T16:07:54.345520" elapsed="0.064906"/>
+<status status="PASS" start="2024-10-29T17:01:29.300108" elapsed="0.140369"/>
 </kw>
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-10-23T16:07:54.411712" level="INFO">Opening url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'</msg>
+<msg time="2024-10-29T17:01:29.440477" level="INFO">Opening url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'</msg>
 <arg>${url}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-10-23T16:07:54.411712" elapsed="0.704795"/>
+<status status="PASS" start="2024-10-29T17:01:29.440477" elapsed="2.425340"/>
 </kw>
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
-<arg>${LOGIN_BTN}</arg>
+<arg>${login_btn}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2024-10-23T16:07:55.116507" elapsed="1.504839"/>
+<status status="PASS" start="2024-10-29T17:01:31.866828" elapsed="0.574851"/>
 </kw>
-<status status="PASS" start="2024-10-23T16:07:52.114723" elapsed="4.506623"/>
+<status status="PASS" start="2024-10-29T17:01:27.228852" elapsed="5.212827"/>
 </kw>
-<kw name="Enter the user id and password and click signin">
+<kw name="Login To Application" owner="resource">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-10-23T16:07:56.621346" level="INFO">Typing text 'Admin' into text field '//input[@name='username']'.</msg>
+<msg time="2024-10-29T17:01:32.443976" level="INFO">Typing text 'Admin' into text field '//input[@name='username']'.</msg>
 <arg>${var_username}</arg>
-<arg>${user_name}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-23T16:07:56.621346" elapsed="0.139313"/>
-</kw>
-<kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2024-10-23T16:07:56.760659" level="INFO">Typing password into text field '//input[@name='password']'.</msg>
-<msg time="2024-10-23T16:07:56.804214" level="INFO">Temporally setting log level to: NONE</msg>
-<arg>${var_password}</arg>
-<arg>${password}</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-23T16:07:56.760659" elapsed="0.137949"/>
-</kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-10-23T16:07:56.898608" level="INFO">Clicking button '//button[@type='submit']'.</msg>
-<arg>${LOGIN_BTN}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-23T16:07:56.898608" elapsed="0.300368"/>
-</kw>
 <arg>${username}</arg>
-<arg>${invalid_password}</arg>
-<status status="PASS" start="2024-10-23T16:07:56.621346" elapsed="0.577630"/>
-</kw>
-<kw name="wait until element is located">
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2024-10-23T16:07:59.199442" level="INFO">Slept 2 seconds.</msg>
-<arg>2</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-10-23T16:07:57.198976" elapsed="2.000466"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${element}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-10-23T16:07:59.199442" elapsed="0.010603"/>
-</kw>
-<arg>${error_msg}</arg>
-<status status="PASS" start="2024-10-23T16:07:57.198976" elapsed="2.011069"/>
-</kw>
-<kw name="validate the error message">
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2024-10-23T16:08:01.218592" level="INFO">Slept 2 seconds.</msg>
-<arg>2</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-10-23T16:07:59.218050" elapsed="2.000542"/>
-</kw>
-<kw name="Element Text Should Be" owner="SeleniumLibrary">
-<msg time="2024-10-23T16:08:01.218592" level="INFO">Verifying element 'css=.oxd-alert.oxd-alert--error' contains exact text 'Invalid credentials'.</msg>
-<arg>${Error_MSG}</arg>
-<arg>${expected_msg}</arg>
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<status status="PASS" start="2024-10-23T16:08:01.218592" elapsed="0.087647"/>
-</kw>
-<status status="PASS" start="2024-10-23T16:07:59.218050" elapsed="2.088189"/>
-</kw>
-<kw name="Close Browser Session" owner="resource" type="TEARDOWN">
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-10-23T16:08:01.306239" elapsed="3.920008"/>
-</kw>
-<status status="PASS" start="2024-10-23T16:08:01.306239" elapsed="3.920008"/>
-</kw>
-<status status="PASS" start="2024-10-23T16:07:52.114723" elapsed="13.111524"/>
-</test>
-<test id="s1-t2" name="Validate Menu display after successful login" line="16">
-<kw name="Open the browser and navigate to login page url" owner="resource" type="SETUP">
-<kw name="Create Webdriver" owner="SeleniumLibrary">
-<msg time="2024-10-23T16:08:05.226247" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
-<arg>Chrome</arg>
-<doc>Creates an instance of Selenium WebDriver.</doc>
-<status status="PASS" start="2024-10-23T16:08:05.226247" elapsed="1.611073"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-10-23T16:08:06.838334" elapsed="0.067819"/>
-</kw>
-<kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-10-23T16:08:06.907165" level="INFO">Opening url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'</msg>
-<arg>${url}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-10-23T16:08:06.907165" elapsed="1.521695"/>
-</kw>
-<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
-<arg>${LOGIN_BTN}</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2024-10-23T16:08:08.429857" elapsed="0.326422"/>
-</kw>
-<status status="PASS" start="2024-10-23T16:08:05.226247" elapsed="3.530032"/>
-</kw>
-<kw name="Enter the user id and password and click signin">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-10-23T16:08:08.757301" level="INFO">Typing text 'Admin' into text field '//input[@name='username']'.</msg>
-<arg>${var_username}</arg>
-<arg>${user_name}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-23T16:08:08.757301" elapsed="0.106361"/>
+<status status="PASS" start="2024-10-29T17:01:32.442716" elapsed="0.160427"/>
 </kw>
 <kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2024-10-23T16:08:08.863662" level="INFO">Typing password into text field '//input[@name='password']'.</msg>
-<msg time="2024-10-23T16:08:08.907393" level="INFO">Temporally setting log level to: NONE</msg>
+<msg time="2024-10-29T17:01:32.603143" level="INFO">Typing password into text field '//input[@name='password']'.</msg>
+<msg time="2024-10-29T17:01:32.668913" level="INFO">Temporally setting log level to: NONE</msg>
 <arg>${var_password}</arg>
 <arg>${password}</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-23T16:08:08.863662" elapsed="0.161010"/>
+<status status="PASS" start="2024-10-29T17:01:32.603143" elapsed="0.208392"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-10-23T16:08:09.026081" level="INFO">Clicking button '//button[@type='submit']'.</msg>
-<arg>${LOGIN_BTN}</arg>
+<msg time="2024-10-29T17:01:32.811535" level="INFO">Clicking button '//button[@type='submit']'.</msg>
+<arg>${login_btn}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-23T16:08:09.025680" elapsed="1.070487"/>
+<status status="PASS" start="2024-10-29T17:01:32.811535" elapsed="0.111810"/>
 </kw>
 <arg>${user_name}</arg>
 <arg>${valid_password}</arg>
-<status status="PASS" start="2024-10-23T16:08:08.756279" elapsed="1.339888"/>
+<status status="PASS" start="2024-10-29T17:01:32.442716" elapsed="0.480629"/>
 </kw>
-<kw name="wait until element is located">
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2024-10-23T16:08:12.097817" level="INFO">Slept 2 seconds.</msg>
-<arg>2</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-10-23T16:08:10.097168" elapsed="2.000649"/>
-</kw>
+<kw name="Navigate To Time Sheet under Time Menu">
+<kw name="wait until element is located" owner="resource">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${element}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-10-23T16:08:12.097817" elapsed="0.025919"/>
+<status status="PASS" start="2024-10-29T17:01:32.923345" elapsed="1.357827"/>
 </kw>
-<arg>${menu_item}</arg>
-<status status="PASS" start="2024-10-23T16:08:10.096167" elapsed="2.027569"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-10-29T17:01:36.281319" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-10-29T17:01:34.281172" elapsed="2.000147"/>
+</kw>
+<arg>${time_menu}</arg>
+<status status="PASS" start="2024-10-29T17:01:32.923345" elapsed="3.358488"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-29T17:01:36.281833" level="INFO">Clicking element '//span[text()='Time']'.</msg>
+<arg>${time_menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-29T17:01:36.281833" elapsed="0.807783"/>
+</kw>
+<kw name="wait until element is located" owner="resource">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-29T17:01:37.090766" elapsed="0.398513"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-10-29T17:01:39.490703" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-10-29T17:01:37.489279" elapsed="2.001424"/>
+</kw>
+<arg>${timesheet_dropdown}</arg>
+<status status="PASS" start="2024-10-29T17:01:37.090766" elapsed="2.399937"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-29T17:01:39.490703" level="INFO">Clicking element 'css=.oxd-topbar-body-nav-tab.--parent.--visited'.</msg>
+<arg>${timesheet_dropdown}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-29T17:01:39.490703" elapsed="0.059809"/>
+</kw>
+<kw name="wait until element is located" owner="resource">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-29T17:01:39.550512" elapsed="0.035152"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-10-29T17:01:41.588547" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-10-29T17:01:39.585664" elapsed="2.002883"/>
+</kw>
+<arg>${mytimesheet_option}</arg>
+<status status="PASS" start="2024-10-29T17:01:39.550512" elapsed="2.038035"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-29T17:01:41.588547" level="INFO">Clicking element '//a[normalize-space()='My Timesheets']'.</msg>
+<arg>${mytimesheet_option}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-29T17:01:41.588547" elapsed="0.415914"/>
+</kw>
+<status status="PASS" start="2024-10-29T17:01:32.923345" elapsed="9.081116"/>
+</kw>
+<kw name="Create Time sheet for current week">
+<kw name="wait until element is located" owner="resource">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-29T17:01:42.005626" elapsed="1.087671"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-10-29T17:01:45.093636" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-10-29T17:01:43.093297" elapsed="2.000339"/>
+</kw>
+<arg>${mytimehssetedit_btn}</arg>
+<status status="PASS" start="2024-10-29T17:01:42.005626" elapsed="3.088010"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-10-29T17:01:45.094644" level="INFO">Clicking button '//button[normalize-space()='Edit']'.</msg>
+<arg>${mytimehssetedit_btn}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-29T17:01:45.093636" elapsed="0.700022"/>
+</kw>
+<kw name="wait until element is located" owner="resource">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-29T17:01:45.795052" elapsed="0.808594"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-10-29T17:01:48.604119" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-10-29T17:01:46.603646" elapsed="2.000473"/>
+</kw>
+<arg>${mytimesheettrash_btn}</arg>
+<status status="PASS" start="2024-10-29T17:01:45.793658" elapsed="2.810972"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-29T17:01:48.604630" level="INFO">Clicking element '//i[@class='oxd-icon bi-trash']'.</msg>
+<arg>${mytimesheettrash_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-29T17:01:48.604630" elapsed="0.108741"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-29T17:01:48.714387" level="INFO">Clicking element '//i[@class='oxd-icon bi-trash']'.</msg>
+<arg>${mytimesheettrash_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-29T17:01:48.714387" elapsed="0.076352"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-29T17:01:48.792729" level="INFO">Typing text 'A' into text field '//input[@placeholder='Type for hints...']'.</msg>
+<arg>${mytimesheetprjt_name}</arg>
+<arg>A</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-29T17:01:48.791729" elapsed="0.139054"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-10-29T17:01:53.931338" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-10-29T17:01:48.930783" elapsed="5.000555"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-10-29T17:01:53.931338" level="INFO">Sending key(s) ('ARROW_DOWN',) to page.</msg>
+<msg time="2024-10-29T17:01:53.931338" level="INFO">Pressing special key ARROW_DOWN to browser.</msg>
+<msg time="2024-10-29T17:01:53.931338" level="INFO">Releasing special key ARROW_DOWN.</msg>
+<arg>None</arg>
+<arg>ARROW_DOWN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-10-29T17:01:53.931338" elapsed="0.021001"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-10-29T17:01:53.953341" level="INFO">Sending key(s) ('ENTER',) to page.</msg>
+<msg time="2024-10-29T17:01:53.954344" level="INFO">Pressing special key ENTER to browser.</msg>
+<msg time="2024-10-29T17:01:53.954344" level="INFO">Releasing special key ENTER.</msg>
+<arg>None</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-10-29T17:01:53.953341" elapsed="0.021049"/>
+</kw>
+<kw name="wait until element is located" owner="resource">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-29T17:01:53.974390" elapsed="0.030952"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-10-29T17:01:56.006848" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-10-29T17:01:54.005342" elapsed="2.001506"/>
+</kw>
+<arg>${mytimesheet_activity}</arg>
+<status status="PASS" start="2024-10-29T17:01:53.974390" elapsed="2.032458"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-29T17:01:56.006848" level="INFO">Clicking element '//div[@class='oxd-select-text-input']'.</msg>
+<arg>${mytimesheet_activity}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-29T17:01:56.006848" elapsed="0.069101"/>
+</kw>
+<kw name="wait until element is located" owner="resource">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-29T17:01:56.077227" elapsed="0.031045"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-10-29T17:01:58.109555" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-10-29T17:01:56.109278" elapsed="2.000277"/>
+</kw>
+<arg>${mytimesheet_activity_option}</arg>
+<status status="PASS" start="2024-10-29T17:01:56.075949" elapsed="2.033606"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-29T17:01:58.109555" level="INFO">Clicking element 'xpath=(//div[@class='oxd-select-option'])[3]'.</msg>
+<arg>${mytimesheet_activity_option}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-29T17:01:58.109555" elapsed="0.071775"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-29T17:01:58.181330" level="INFO">Typing text '4' into text field '//*[@id="app"]/div[1]/div[2]/div[2]/div/form/div[2]/table/tbody/tr[1]/td[3]/div/div[2]/input'.</msg>
+<arg>${mytimesheet_Monday}</arg>
+<arg>4</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-29T17:01:58.181330" elapsed="0.126712"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-29T17:01:58.309245" level="INFO">Typing text '4' into text field '//*[@id="app"]/div[1]/div[2]/div[2]/div/form/div[2]/table/tbody/tr[1]/td[4]/div/div[2]/input'.</msg>
+<arg>${mytimesheet_Tuesday}</arg>
+<arg>4</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-29T17:01:58.309245" elapsed="0.121816"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-29T17:01:58.431794" level="INFO">Typing text '4' into text field '//*[@id="app"]/div[1]/div[2]/div[2]/div/form/div[2]/table/tbody/tr[1]/td[5]/div/div[2]/input'.</msg>
+<arg>${mytimesheet_Wednesday}</arg>
+<arg>4</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-29T17:01:58.431061" elapsed="0.122484"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-29T17:01:58.553545" level="INFO">Typing text '4' into text field '//*[@id="app"]/div[1]/div[2]/div[2]/div/form/div[2]/table/tbody/tr[1]/td[6]/div/div[2]/input'.</msg>
+<arg>${mytimesheet_Thursday}</arg>
+<arg>4</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-29T17:01:58.553545" elapsed="0.155619"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-29T17:01:58.710178" level="INFO">Typing text '4' into text field '//*[@id="app"]/div[1]/div[2]/div[2]/div/form/div[2]/table/tbody/tr[1]/td[7]/div/div[2]/input'.</msg>
+<arg>${mytimesheet_Friday}</arg>
+<arg>4</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-29T17:01:58.709164" elapsed="0.142226"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-29T17:01:58.851989" level="INFO">Clicking element '//i[@class='oxd-icon bi-plus']'.</msg>
+<arg>${mytimesheet_addrow}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-29T17:01:58.851390" elapsed="0.097016"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-29T17:01:58.948406" level="INFO">Typing text 'B' into text field '(//input[@placeholder='Type for hints...'])[2]'.</msg>
+<arg>${mytimesheetprjt_name2}</arg>
+<arg>B</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-29T17:01:58.948406" elapsed="0.147290"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-10-29T17:02:04.096221" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-10-29T17:01:59.095696" elapsed="5.000525"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-10-29T17:02:04.096221" level="INFO">Sending key(s) ('ARROW_DOWN',) to page.</msg>
+<msg time="2024-10-29T17:02:04.096221" level="INFO">Pressing special key ARROW_DOWN to browser.</msg>
+<msg time="2024-10-29T17:02:04.096221" level="INFO">Releasing special key ARROW_DOWN.</msg>
+<arg>None</arg>
+<arg>ARROW_DOWN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-10-29T17:02:04.096221" elapsed="0.013803"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2024-10-29T17:02:04.113216" level="INFO">Sending key(s) ('ENTER',) to page.</msg>
+<msg time="2024-10-29T17:02:04.113216" level="INFO">Pressing special key ENTER to browser.</msg>
+<msg time="2024-10-29T17:02:04.113216" level="INFO">Releasing special key ENTER.</msg>
+<arg>None</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2024-10-29T17:02:04.112511" elapsed="0.022180"/>
+</kw>
+<kw name="wait until element is located" owner="resource">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-29T17:02:04.136049" elapsed="0.026516"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-10-29T17:02:06.163126" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-10-29T17:02:04.162565" elapsed="2.000561"/>
+</kw>
+<arg>${mytimesheet_activity2}</arg>
+<status status="PASS" start="2024-10-29T17:02:04.134691" elapsed="2.028435"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-29T17:02:06.163126" level="INFO">Clicking element '(//i[@class='oxd-icon bi-caret-down-fill oxd-select-text--arrow'])[2]'.</msg>
+<arg>${mytimesheet_activity2}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-29T17:02:06.163126" elapsed="0.055993"/>
+</kw>
+<kw name="wait until element is located" owner="resource">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-29T17:02:06.219119" elapsed="0.028543"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-10-29T17:02:08.249375" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-10-29T17:02:06.248794" elapsed="2.000581"/>
+</kw>
+<arg>${mytimesheet_activity_option2}</arg>
+<status status="PASS" start="2024-10-29T17:02:06.219119" elapsed="2.030256"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-29T17:02:08.249375" level="INFO">Clicking element 'xpath=(//div[@class='oxd-select-option'])[4]'.</msg>
+<arg>${mytimesheet_activity_option2}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-29T17:02:08.249375" elapsed="0.064067"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-29T17:02:08.316323" level="INFO">Typing text '4' into text field '(//input[@class='oxd-input oxd-input--active'])[9]'.</msg>
+<arg>${mytimesheet_Monday2}</arg>
+<arg>4</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-29T17:02:08.315292" elapsed="0.111379"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-29T17:02:08.426671" level="INFO">Typing text '4' into text field '//*[@id="app"]/div[1]/div[2]/div[2]/div/form/div[2]/table/tbody/tr[2]/td[4]/div/div[2]/input'.</msg>
+<arg>${mytimesheet_Tuesday2}</arg>
+<arg>4</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-29T17:02:08.426671" elapsed="0.106417"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-29T17:02:08.533088" level="INFO">Typing text '4' into text field '//*[@id="app"]/div[1]/div[2]/div[2]/div/form/div[2]/table/tbody/tr[2]/td[5]/div/div[2]/input'.</msg>
+<arg>${mytimesheet_Wednesday2}</arg>
+<arg>4</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-29T17:02:08.533088" elapsed="0.101487"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-29T17:02:08.634575" level="INFO">Typing text '4' into text field '//*[@id="app"]/div[1]/div[2]/div[2]/div/form/div[2]/table/tbody/tr[2]/td[6]/div/div[2]/input'.</msg>
+<arg>${mytimesheet_Thursday2}</arg>
+<arg>4</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-29T17:02:08.634575" elapsed="0.118799"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-29T17:02:08.755209" level="INFO">Typing text '4' into text field '//*[@id="app"]/div[1]/div[2]/div[2]/div/form/div[2]/table/tbody/tr[2]/td[7]/div/div[2]/input'.</msg>
+<arg>${mytimesheet_Friday2}</arg>
+<arg>4</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-29T17:02:08.753374" elapsed="0.119337"/>
+</kw>
+<status status="PASS" start="2024-10-29T17:01:42.005626" elapsed="26.867085"/>
+</kw>
+<kw name="Submit the time sheet">
+<kw name="wait until element is located" owner="resource">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-29T17:02:08.874051" elapsed="0.031028"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-10-29T17:02:10.905390" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-10-29T17:02:08.905079" elapsed="2.000311"/>
+</kw>
+<arg>${save_btn}</arg>
+<status status="PASS" start="2024-10-29T17:02:08.874051" elapsed="2.031339"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-29T17:02:10.905390" level="INFO">Clicking element '//button[normalize-space()='Save']'.</msg>
+<arg>${save_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-29T17:02:10.905390" elapsed="0.070218"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-10-29T17:02:15.976157" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-10-29T17:02:10.975608" elapsed="5.000549"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-10-29T17:02:16.004438" level="INFO">${timesheet_status} = Status: Submitted</msg>
+<var>${timesheet_status}</var>
+<arg>${mytimesheet_status}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-29T17:02:15.976157" elapsed="0.028281"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${timesheet_status}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-10-29T17:02:16.004438" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${timesheet_status}' == &quot;Status: Submitted&quot;">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>This week Time sheet updated</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-10-29T17:02:16.004438" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-10-29T17:02:16.004438" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE">
+<kw name="wait until element is located" owner="resource">
+<arg>${mytimesheey_submitbtn}</arg>
+<status status="NOT RUN" start="2024-10-29T17:02:16.004438" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${mytimesheet_submitbtn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-10-29T17:02:16.004438" elapsed="0.000000"/>
+</kw>
+<kw name="wait until element is located" owner="resource">
+<arg>${mytimehssetedit_btn}</arg>
+<status status="NOT RUN" start="2024-10-29T17:02:16.004438" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>This week Time sheet Submitted</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2024-10-29T17:02:16.004438" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-29T17:02:16.004438" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2024-10-29T17:02:16.004438" elapsed="0.000000"/>
+</if>
+<status status="PASS" start="2024-10-29T17:02:08.874051" elapsed="7.130387"/>
+</kw>
+<kw name="Logout the application" owner="resource">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-29T17:02:16.004438" level="INFO">Clicking element '//span[@class='oxd-userdropdown-tab']'.</msg>
+<arg>${logout_dropdown}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-29T17:02:16.004438" elapsed="0.067530"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-29T17:02:16.071968" level="INFO">Clicking element '//a[contains(text(),'Logout')]'.</msg>
+<arg>${logout}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-29T17:02:16.071968" elapsed="0.697818"/>
+</kw>
+<status status="PASS" start="2024-10-29T17:02:16.004438" elapsed="0.765348"/>
 </kw>
 <kw name="Close Browser Session" owner="resource" type="TEARDOWN">
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-10-23T16:08:12.123736" elapsed="2.224470"/>
+<status status="PASS" start="2024-10-29T17:02:16.771794" elapsed="2.420117"/>
 </kw>
-<status status="PASS" start="2024-10-23T16:08:12.123736" elapsed="2.224470"/>
+<status status="PASS" start="2024-10-29T17:02:16.770799" elapsed="2.421112"/>
 </kw>
-<status status="PASS" start="2024-10-23T16:08:05.226247" elapsed="9.121959"/>
+<status status="PASS" start="2024-10-29T17:01:27.228852" elapsed="51.963059"/>
 </test>
-<doc>To Validate the login Page</doc>
-<status status="PASS" start="2024-10-23T16:07:51.861786" elapsed="22.486420"/>
+<doc>To create Time sheet for current week</doc>
+<status status="PASS" start="2024-10-29T17:01:26.658190" elapsed="52.533721"/>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="0" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="2" fail="0" skip="0" id="s1" name="Loginfail">Loginfail</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="createTimeSheet">createTimeSheet</stat>
 </suite>
 </statistics>
 <errors>

@@ -30,6 +30,7 @@ ${admin_menu}          //span[text()='Admin']
 ${pim_menu}              //span[text()='PIM']
 ${claim_menu}              //span[text()='Claim']
 ${leave_menu}              //span[text()='Leave']
+${time_menu}              //span[text()='Time']
 ${add_btn}                //button[normalize-space()='Add']
 ${var_newee_name}        //input[@placeholder='Type for hints...']
 ${var_newuser_name}       (//input[@class='oxd-input oxd-input--active'])[2]
@@ -74,7 +75,30 @@ ${expense_amount}      css=div.oxd-layout.orangehrm-upgrade-layout div.oxd-layou
 ${expense_note}        (//textarea[@class='oxd-textarea oxd-textarea--active oxd-textarea--resize-vertical'])[2]
 ${submitclaim_btn}     //button[normalize-space()='Submit']
 ${back_btn}            //button[normalize-space()='Back']
-
+${timesheet_dropdown}  css=.oxd-topbar-body-nav-tab.--parent.--visited
+${mytimesheet_option}    //a[normalize-space()='My Timesheets']
+${mytimesheet_header}    //h6[normalize-space()='My Timesheet']
+${mytimehssetedit_btn}    //button[normalize-space()='Edit']
+${mytimesheettrash_btn}    //i[@class='oxd-icon bi-trash']
+${mytimesheetprjt_name}    //input[@placeholder='Type for hints...']
+${mytimesheet_activity}    //div[@class='oxd-select-text-input']
+${mytimesheet_activity_option}    xpath=(//div[@class='oxd-select-option'])[3]
+${mytimesheet_Monday}      //*[@id="app"]/div[1]/div[2]/div[2]/div/form/div[2]/table/tbody/tr[1]/td[3]/div/div[2]/input
+${mytimesheet_Tuesday}     //*[@id="app"]/div[1]/div[2]/div[2]/div/form/div[2]/table/tbody/tr[1]/td[4]/div/div[2]/input
+${mytimesheet_Wednesday}   //*[@id="app"]/div[1]/div[2]/div[2]/div/form/div[2]/table/tbody/tr[1]/td[5]/div/div[2]/input
+${mytimesheet_Thursday}    //*[@id="app"]/div[1]/div[2]/div[2]/div/form/div[2]/table/tbody/tr[1]/td[6]/div/div[2]/input
+${mytimesheet_Friday}      //*[@id="app"]/div[1]/div[2]/div[2]/div/form/div[2]/table/tbody/tr[1]/td[7]/div/div[2]/input
+${mytimesheet_addrow}    //i[@class='oxd-icon bi-plus']
+${mytimesheetprjt_name2}    (//input[@placeholder='Type for hints...'])[2]
+${mytimesheet_activity2}    (//i[@class='oxd-icon bi-caret-down-fill oxd-select-text--arrow'])[2]
+${mytimesheet_activity_option2}    xpath=(//div[@class='oxd-select-option'])[4]
+${mytimesheet_Monday2}    (//input[@class='oxd-input oxd-input--active'])[9]
+${mytimesheet_Tuesday2}    //*[@id="app"]/div[1]/div[2]/div[2]/div/form/div[2]/table/tbody/tr[2]/td[4]/div/div[2]/input
+${mytimesheet_Wednesday2}  //*[@id="app"]/div[1]/div[2]/div[2]/div/form/div[2]/table/tbody/tr[2]/td[5]/div/div[2]/input
+${mytimesheet_Thursday2}   //*[@id="app"]/div[1]/div[2]/div[2]/div/form/div[2]/table/tbody/tr[2]/td[6]/div/div[2]/input
+${mytimesheet_Friday2}    //*[@id="app"]/div[1]/div[2]/div[2]/div/form/div[2]/table/tbody/tr[2]/td[7]/div/div[2]/input
+${mytimesheet_submitbtn}    //button[normalize-space()='Submit']
+${mytimesheet_status}       (//p[@class='oxd-text oxd-text--p oxd-text--subtitle-2'])[1]
 *** Keywords ***
 Open the browser and navigate to login page url
     Create Webdriver    Chrome
